@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>앙케이트</h1>
+<form action="practice" id="frm" method="get">
+<table>
+<tr>
+	<td>이름</td>
+	<td>
+		<input type="text" name="name" id="name" size="20" value="">
+	</td>
+</tr>
+<tr>
+	<td>나이</td>
+	<td>
+		<input type="text" name="age" id="age" value="">
+	</td>
+</tr>
+<tr>
+	<td>좋아하는 과일</td>
+	<td>
+		<select name="fruits" multiple="multiple">
+			<option value="apple" selected="selected">사과</option>
+			<option value="pear" selected="selected">배</option>
+			<option value="banana" selected="selected">바나나</option>
+		</select>
+	</td>
+</tr>
+<br>
+</table>
+
+
+<input type="button" onclick="btnClick()" value="전송">
+</form>
+
+<script type="text/javascript">
+function btnClick(){
+	if($("#name").val().trim()==""){
+		alert('이름을 입력해 주십시오');
+	}else if($("#age").val()==""){
+		alert('나이를 입력해 주십시오');
+	}else{
+		$("#frm").submit(); /* == <input type="submit" value="전송"> */
+		/* $("#frm").attr("action","practice") //위 form에 action값을 지금 라인에서 줄 수 있다.*/
+	}
+}
+
+
+
+</script>
+
+</body>
+</html>
